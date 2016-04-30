@@ -1,0 +1,38 @@
+/* Site Theme */
+.background-primary { background-color: #1ab394; }
+.background-info { background-color: #23c6c8; }
+.background-warning { background-color: #f8ac59; }
+.background-danger { background-color: #ed5565; }
+.background-dark-blue { background-color: #2f4050; }
+
+.background-primary h5,
+ .background-info h5,
+ .background-warning h5,
+ .background-danger h5,
+ .background-dark-blue h5 { color: white; }
+
+.background-primary label,
+ .background-info label,
+ .background-warning label,
+ .background-danger label,
+ .background-dark-blue label { color: white; }
+
+.background-primary i,
+ .background-info i,
+ .background-warning i,
+ .background-danger i,
+ .background-dark-blue i { color: white; }
+
+#page-wrapper { padding-bottom: 25px; }
+
+/* Right Side Panel - Row */
+.wrapper.wrapper-content { margin: 20px 10px 40px; }
+.wrapper.wrapper-content .page-title h1 { margin: 0; }
+.wrapper.wrapper-content.animated.fadeInRight { padding: 0; }
+.row.not_first { margin-top: 15px; }
+
+/* Left Side Bar - Logo */
+.profile-logo img { width: 37%; }
+
+/* Input Group */
+.dropdown-toggle { margin-bottom: 0px !important; }

@@ -1,0 +1,4 @@
+<%inherit file="base.mako"/>
+
+<div class="wrapper wrapper-content">
+</div>

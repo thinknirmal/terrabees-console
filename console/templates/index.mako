@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+<%inherit file="base.mako"/>
+
+<%block name="js">
+    <script type="text/javascript">
+        $(document).ready(function(){
+            shared_utitilies.load_page('/dashboard');
+        });
+    </script>
+</%block>
+=======
 <!DOCTYPE html>
 <html>
 
@@ -463,3 +474,4 @@
 </body>
 
 </html>
+>>>>>>> 0e40e8b6b4532fbb4c163f08b9eeff5702b95d16
