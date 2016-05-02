@@ -182,9 +182,6 @@
         </div>
     </div>
 </div>
-<script src="${request.static_url('console:static/js/jquery-2.1.1.js')}"></script>
-<script src="${request.static_url('console:static/js/plugins/flot/jquery.flot.js')}"></script>
-        <script src="${request.static_url('console:static/js/plugins/flot/jquery.flot.time.js')}"></script>
 <script>
     $(document).ready(function () {
         /** Top 20 - Traffic & Performance **/

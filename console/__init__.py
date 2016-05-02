@@ -12,6 +12,7 @@ def main(global_config, **settings):
     config.add_route('login', '/login')
     config.add_route('consignors', '/consignors')
     config.add_route('create-consignor', '/create-consignor')
+    config.add_route('create-consignor2', '/create-consignor2')
     config.add_route('pickups', '/pickups')
     config.add_route('create-pickup', '/create-pickup')
     config.add_route('test', '/test')

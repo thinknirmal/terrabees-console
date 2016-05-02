@@ -16,6 +16,7 @@ $(document).ready(function (){
             myCookie.is_sanitized();
             shared_utitilies.left_nav.set_active_menu_on_load();
 
+            /* Logout */
             $('#logout').click(function (e){
                 e.preventDefault();
 
@@ -31,7 +32,15 @@ $(document).ready(function (){
                     myCookie.destroy();
                     window.location = './login';
                 });
-            })
+            });
+
+            /* Modal */
+            $(document).on('keydown', function (e){
+                // Hide Modal when user presses 'esc'
+                if (e.keyCode == 27) {
+                    $('.modal').modal('hide');
+                }
+            });
         }
     }
 

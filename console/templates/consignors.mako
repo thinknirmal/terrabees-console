@@ -1,7 +1,5 @@
-<%block name="css">
-    <link href="${request.static_url('console:static/css/plugins/dataTables/datatables.min.css')}" rel="stylesheet">
-    <link href="${request.static_url('console:static/css/plugins/daterangepicker/daterangepicker.css')}" rel="stylesheet">
-</%block>
+<link href="${request.static_url('console:static/css/plugins/dataTables/datatables.min.css')}" rel="stylesheet">
+<link href="${request.static_url('console:static/css/plugins/daterangepicker/daterangepicker.css')}" rel="stylesheet">
 
 <div class="wrapper wrapper-content">
     <div class="row">
@@ -283,99 +281,97 @@
     </div>
 </div>
 
-<%block name="js">
-    <script src="${request.static_url('console:static/js/plugins/jeditable/jquery.jeditable.js')}"></script>
-    <script src="${request.static_url('console:static/js/plugins/dataTables/datatables.min.js')}"></script>
-    <script src="${request.static_url('console:static/js/plugins/moment/moment-with-locales.min.js')}"></script>
-    <script src="${request.static_url('console:static/js/plugins/daterangepicker/daterangepicker.js')}"></script>
+<script src="${request.static_url('console:static/js/plugins/jeditable/jquery.jeditable.js')}"></script>
+<script src="${request.static_url('console:static/js/plugins/dataTables/datatables.min.js')}"></script>
+<script src="${request.static_url('console:static/js/plugins/moment/moment-with-locales.min.js')}"></script>
+<script src="${request.static_url('console:static/js/plugins/daterangepicker/daterangepicker.js')}"></script>
 
-    <!-- Page-Level Scripts -->
-    <script>
-        $(document).ready(function (){
-            /** Report Date Range **/
-            $('#consignors-report-range #report-range-content').html(moment().subtract(29, 'days').format('MMM D, YYYY') + ' - ' + moment().format('MMM D, YYYY'));
+<!-- Page-Level Scripts -->
+<script>
+    $(document).ready(function (){
+        /** Report Date Range **/
+        $('#consignors-report-range #report-range-content').html(moment().subtract(29, 'days').format('MMM D, YYYY') + ' - ' + moment().format('MMM D, YYYY'));
 
-            var today = new Date();
-            //var yesterday = new Date();
-            //yesterday.setDate(today.getDate() - 1);
-            //var maxDate = yesterday.toLocaleDateString();
-            //console.log(maxDate);
+        var today = new Date();
+        //var yesterday = new Date();
+        //yesterday.setDate(today.getDate() - 1);
+        //var maxDate = yesterday.toLocaleDateString();
+        //console.log(maxDate);
 
-            $('#consignors-report-range').daterangepicker({
-                format: 'MM/DD/YYYY',
-                startDate: moment().subtract(29, 'days'),
-                endDate: moment(),
-                minDate: '01/01/2012',
-                //maxDate: '12/31/2015',
-                maxDate: today,
-                dateLimit: { days: 60 },
-                showDropdowns: true,
-                showWeekNumbers: true,
-                timePicker: false,
-                timePickerIncrement: 1,
-                timePicker12Hour: true,
-                /*ranges: {
-                    'Today': [moment(), moment()],
-                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                    'This Month': [moment().startOf('month'), moment()],
-                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                },*/
-                opens: 'left',
-                drops: 'down',
-                buttonClasses: ['btn', 'btn-sm'],
-                applyClass: 'btn-primary',
-                cancelClass: 'btn-default',
-                separator: ' to ',
-                locale: {
-                    applyLabel: 'Submit',
-                    cancelLabel: 'Cancel',
-                    fromLabel: 'From',
-                    toLabel: 'To',
-                    customRangeLabel: 'Custom',
-                    daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr','Sa'],
-                    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-                    firstDay: 1
-                }
-            }, function(start, end, label) {
-                $('#consignors-report-range #report-range-content').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
-            });//.done(function (){
-                //$('.daterangepicker.dropdown-menu.opensleft.show-calendar .ranges li:eq(4)').click();
-            //});
+        $('#consignors-report-range').daterangepicker({
+            format: 'MM/DD/YYYY',
+            startDate: moment().subtract(29, 'days'),
+            endDate: moment(),
+            minDate: '01/01/2012',
+            //maxDate: '12/31/2015',
+            maxDate: today,
+            dateLimit: { days: 60 },
+            showDropdowns: true,
+            showWeekNumbers: true,
+            timePicker: false,
+            timePickerIncrement: 1,
+            timePicker12Hour: true,
+            /*ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment()],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            },*/
+            opens: 'left',
+            drops: 'down',
+            buttonClasses: ['btn', 'btn-sm'],
+            applyClass: 'btn-primary',
+            cancelClass: 'btn-default',
+            separator: ' to ',
+            locale: {
+                applyLabel: 'Submit',
+                cancelLabel: 'Cancel',
+                fromLabel: 'From',
+                toLabel: 'To',
+                customRangeLabel: 'Custom',
+                daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr','Sa'],
+                monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                firstDay: 1
+            }
+        }, function(start, end, label) {
+            $('#consignors-report-range #report-range-content').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+        });//.done(function (){
+            //$('.daterangepicker.dropdown-menu.opensleft.show-calendar .ranges li:eq(4)').click();
+        //});
 
-            /** Queued Consignors Table **/
-            /*
-            $('#consignors-table-all').dataTable({
-                "dom": '<".dataTables-toolkit"Tf><it><lp>',
-                "columnDefs": [{"targets": [3, 4], "orderable": false}],
-                "pagingType": "full_numbers",
-                "pageLength": 10,
-                "tableTools": {
-                    "sSwfPath": "swf/copy_csv_xls_pdf.swf"
-                }
-            });
-            */
-
-            $('#consignors-table-all').DataTable({
-                dom: '<"html5buttons"B>lTfgitp',
-                buttons: [
-                    { extend: 'copy' },
-                    { extend: 'csv' },
-                    { extend: 'excel', title: 'ExampleFile' },
-                    { extend: 'pdf', title: 'ExampleFile' },
-
-                    { extend: 'print', customize: function (win){
-                        $(win.document.body).addClass('white-bg');
-                        $(win.document.body).css('font-size', '10px');
-
-                        $(win.document.body).find('table')
-                            .addClass('compact')
-                            .css('font-size', 'inherit');
-                        }
-                    }
-                ]
-            });
+        /** Queued Consignors Table **/
+        /*
+        $('#consignors-table-all').dataTable({
+            "dom": '<".dataTables-toolkit"Tf><it><lp>',
+            "columnDefs": [{"targets": [3, 4], "orderable": false}],
+            "pagingType": "full_numbers",
+            "pageLength": 10,
+            "tableTools": {
+                "sSwfPath": "swf/copy_csv_xls_pdf.swf"
+            }
         });
-    </script>
-</%block>>
+        */
+
+        $('#consignors-table-all').DataTable({
+            dom: '<"html5buttons"B>lTfgitp',
+            buttons: [
+                { extend: 'copy' },
+                { extend: 'csv' },
+                { extend: 'excel', title: 'ExampleFile' },
+                { extend: 'pdf', title: 'ExampleFile' },
+
+                { extend: 'print', customize: function (win){
+                    $(win.document.body).addClass('white-bg');
+                    $(win.document.body).css('font-size', '10px');
+
+                    $(win.document.body).find('table')
+                        .addClass('compact')
+                        .css('font-size', 'inherit');
+                    }
+                }
+            ]
+        });
+    });
+</script>

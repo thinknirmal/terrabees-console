@@ -46,6 +46,7 @@
                             <ul class="nav nav-second-level collapse">
                                 <li><a href="javascript:shared_utitilies.load_page('/consignors')">All consignors</a></li>
                                 <li><a href="javascript:shared_utitilies.load_page('/create-consignor')">Create consignor</a></li>
+                                <li><a href="javascript:shared_utitilies.load_page('/create-consignor2')">Create consignor 2</a></li>
                                 <!--<li><a href="/consignors">All consignors</a></li>
                                 <li><a href="javascript:shared_utitilies.load_page('/create-consignor')">Create consignor</a></li>-->
                             </ul>
@@ -104,22 +105,22 @@
             </div>
         </div>
         <!-- Main scripts -->
-        <script src="${request.static_url('console:static/js/jquery-2.1.1.js')}"></script>
-        <script src="${request.static_url('console:static/js/bootstrap.min.js')}"></script>
-        <script src="${request.static_url('console:static/js/plugins/metisMenu/jquery.metisMenu.js')}"></script>
-        <script src="${request.static_url('console:static/js/plugins/slimscroll/jquery.slimscroll.min.js')}"></script>
+        <script type="text/javascript" src="${request.static_url('console:static/js/jquery-2.1.1.js')}"></script>
+        <script type="text/javascript" src="${request.static_url('console:static/js/bootstrap.min.js')}"></script>
+        <script type="text/javascript" src="${request.static_url('console:static/js/plugins/metisMenu/jquery.metisMenu.js')}"></script>
+        <script type="text/javascript" src="${request.static_url('console:static/js/plugins/slimscroll/jquery.slimscroll.min.js')}"></script>
 
         <!-- Flot -->
-        <script src="${request.static_url('console:static/js/plugins/flot/jquery.flot.js')}"></script>
-        <script src="${request.static_url('console:static/js/plugins/flot/jquery.flot.time.js')}"></script>
+        <script type="text/javascript" src="${request.static_url('console:static/js/plugins/flot/jquery.flot.js')}"></script>
+        <script type="text/javascript" src="${request.static_url('console:static/js/plugins/flot/jquery.flot.time.js')}"></script>
 
         <!-- Custom and plugin javascript -->
-        <script src="${request.static_url('console:static/js/inspinia.js')}"></script>
-        <script src="${request.static_url('console:static/js/plugins/pace/pace.min.js')}"></script>
+        <script type="text/javascript" src="${request.static_url('console:static/js/inspinia.js')}"></script>
+        <script type="text/javascript" src="${request.static_url('console:static/js/plugins/pace/pace.min.js')}"></script>
 
         <!-- Cookie -->
-        <script src="${request.static_url('console:static/js/js.cookie.js')}"></script>
-        <script src="${request.static_url('console:static/js/myCookie.js')}"></script>
+        <script type="text/javascript" src="${request.static_url('console:static/js/js.cookie.js')}"></script>
+        <script type="text/javascript" src="${request.static_url('console:static/js/myCookie.js')}"></script>
 
         <script src="${request.static_url('console:static/js/base.js')}"></script>
         <%block name="js"></%block>

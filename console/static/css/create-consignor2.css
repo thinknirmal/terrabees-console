@@ -1,0 +1,11 @@
+/* Contacts */
+.address .ibox-content { border: 0; }
+.address .phone_group .country_code { padding-right: 15px; }
+.address .phone_group .extension { padding-right: 0; }
+.address .btn_add_contact { margin-bottom: 25px; }
+
+/* Dispatch */
+.address .dispatch { border: 0; }
+
+/* Template */
+.is_template { display: none; }

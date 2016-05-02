@@ -36,3 +36,13 @@
 
 /* Input Group */
 .dropdown-toggle { margin-bottom: 0px !important; }
+
+/* Modal */
+.modal-title { margin-top: 10px; margin-bottom: 15px; }
+.modal-title .close.pull-right { margin-top: 10px; }
+
+/* TextArea */
+.no-resize { resize: none; }
+
+/* div */
+.t-cell { display: table-cell; }

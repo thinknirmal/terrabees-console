@@ -1,4 +1,8 @@
-.address_contact { position: relative; }
-.contact-content { border: 0; }
-
-#contact_button_panel { margin-top: 10px; }
+.btn_edit { padding-right: 10px; line-height: 25px; font-size: 16px; }
+.btn_edit:before { font-family: 'FontAwesome'; content: '\f040'; }
+.btn_edit:hover { cursor: pointer; color: #1ab394; }
+#page-title-warning { padding: 12px 20px 8px 20px; font-size: 15px; color: white; }
+#row_consignor_name { margin-top: 27px; }
+#row_consignor_name, #row_consignor_desc { padding-left: 15px; }
+#label_consignor_name { line-height: 35px; }
+#label_consignor_desc { line-height: 25px; font-size: 16px; color: #a7b1c2; white-space: pre-wrap; }
