@@ -69,7 +69,7 @@
                 </div>
             </nav>
             <div id="page-wrapper" class="gray-bg">
-                <div class="row border-bottom">
+                <!--<div class="row border-bottom">
                     <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
                         <div class="navbar-header">
                             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
@@ -86,6 +86,52 @@
                                 <a id="logout" href="#">
                                     <i class="fa fa-sign-out"></i> Log out
                                 </a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </div>-->
+                <div class="row border-bottom">
+                    <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                        <div class="navbar-header">
+                            <a id="navbar-minimalize" class="minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                        </div>
+                        <ul class="nav navbar-top-links navbar-right">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                    <span class="welcome-message">Acme Corporation <b class="caret"></b></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#"><small>Manage Account</small></a></li>
+                                    <li><a href="#"><small>Billing</small></a></li>
+                                    <li><a href="#"><small>Security Credentials</small></a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#"><small>Logout</small></a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown m-l-md">
+                                <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-bell"></i><span class="label label-danger">2</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-alerts">
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <i class="fa fa-info fa-fw"></i> Service disruption at <strong>Watthana</strong>
+                                                <span class="pull-right text-muted small">4 minutes ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <i class="fa fa-money fa-fw"></i> Payment overdue
+                                                <span class="pull-right text-muted small">18 minutes ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
 
