@@ -4,8 +4,9 @@ $(document).ready(function (){
             set_active_menu_on_load: function () {
                 /* Set 'active' class to the <li> element according to pathname on page load */
                 var pathname = window.location.pathname;
-                var element = 'a[href="' + pathname + '"';
+                var element = 'a[href="' + pathname + '"]';
                 $(element).parents('li').addClass('active');
+                console.log(element);
                 $(element).parents('.nav.nav-second-level').addClass('in');
             }
         },
@@ -15,6 +16,18 @@ $(document).ready(function (){
         init: function (){
             myCookie.is_sanitized();
             shared_utitilies.left_nav.set_active_menu_on_load();
+
+            /* Navigation Links */
+//            $('.nav_main_item').click(function () {
+//                $('.nav_main_item').removeClass('active');
+//                $(this).addClass('active');
+//            });
+
+//            $('.nav_link').click(function () {
+////                console.log('y')
+//                $('.nav_link').removeClass('active');
+//                $(this).parents('.nav_main_item').addClass('active');
+//            });
 
             /* Logout */
             $('#logout').click(function (e){

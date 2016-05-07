@@ -2,7 +2,41 @@
 .btn_edit:before { font-family: 'FontAwesome'; content: '\f040'; }
 .btn_edit:hover { cursor: pointer; color: #1ab394; }
 #page-title-warning { padding: 12px 20px 8px 20px; font-size: 15px; color: white; }
-#row_consignor_name { margin-top: 27px; }
-#row_consignor_name, #row_consignor_desc { padding-left: 15px; }
+
+#row-title { padding: 0; }
+
+/* Labels */
+#row_warning .col-sm-12 { padding-left: 0; padding-right: 0; }
+#row_consignor_name .col-sm-12 { margin-top: 27px; }
+#row_consignor_name,
+    #row_consignor_desc { padding-left: 15px; }
+
+#row_consignor_desc { max-height: 100px; }
+#row_consignor_desc.read_more { max-height: 100%; }
+
 #label_consignor_name { line-height: 35px; }
-#label_consignor_desc { line-height: 25px; font-size: 16px; color: #a7b1c2; white-space: pre-wrap; }
+#label_consignor_desc { padding-bottom: 15px; line-height: 25px; font-size: 16px; color: #a7b1c2; white-space: pre-wrap; }
+
+/* Modal: Consignor Details */
+#modal-consignor-details .modal-dialog { width: 750px; }
+#modal-consignor-details .modal-content { background: transparent; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.0); }
+#modal-consignor-details .modal-content .nav-tabs { border-bottom: 1px solid transparent; }
+#modal-consignor-details .modal-content .nav-tabs li a { background-color: #A7B1C2; color: white; }
+#modal-consignor-details .modal-content .nav-tabs li.active a { background-color: #1ab394; border-color: #1ab394; color: white; }
+#modal-consignor-details .modal-content .tab-content .panel-body { background-color: #1ab394; border-color: #1ab394; }
+#modal-consignor-details .modal-content .tab-content .panel-body label { color: white; }
+#modal-consignor-details .modal-content .tab-content .panel-body .addr_row1 .col-sm-2,
+    #modal-consignor-details .modal-content .tab-content #tab-1 .panel-body .addr_row1 .col-sm-4,
+    #modal-consignor-details .modal-content .tab-content #tab-1 .panel-body .addr_row2 .col-sm-4,
+    #modal-consignor-details .modal-content .tab-content #tab-1 .panel-body .addr_row3 .col-sm-4,
+    #modal-consignor-details .modal-content .tab-content #tab-1 .panel-body .addr_row4 .col-sm-4,
+    #modal-consignor-details .modal-content .tab-content #tab-2 .panel-body .col-sm-6,
+    #row_lat_lng .col-sm-9 { padding-right: 0; }
+#modal-consignor-details .modal-content .tab-content #tab-1 .panel-body .addr_row2 .keep_padding_right,
+    #modal-consignor-details .modal-content .tab-content #tab-1 .panel-body .addr_row3 .keep_padding_right,
+    #modal-consignor-details .modal-content .tab-content #tab-2 .panel-body .keep_padding_right { padding-right: 15px; }
+
+#geo_map { height: 250px; }
+
+/* Template */
+.is_template { display: none; }

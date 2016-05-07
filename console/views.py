@@ -1,6 +1,6 @@
 from pyramid.view import view_config
 
-@view_config(route_name='home', renderer='templates/index.mako')
+@view_config(route_name='home', renderer='templates/dashboard.mako')
 @view_config(route_name='dashboard', renderer='templates/dashboard.mako')
 @view_config(route_name='login', renderer='templates/login.mako')
 @view_config(route_name='consignors', renderer='templates/consignors.mako')

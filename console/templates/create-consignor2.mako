@@ -1,3 +1,5 @@
+<%inherit file="base.mako" />
+
 <%block name="css">
     <link href="${request.static_url('console:static/css/create-consignor2.css')}" rel="stylesheet" />
 </%block>

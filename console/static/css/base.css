@@ -45,4 +45,4 @@
 .no-resize { resize: none; }
 
 /* div */
-.t-cell { display: table-cell; }
+.t-cell { display: table-cell !important; }

@@ -1,3 +1,5 @@
+<%inherit file="base.mako"/>
+
 <div class="wrapper wrapper-content animated fadeInRight">
     <div id="dash-traffic" class="row">
         <div class="col-lg-12">
@@ -182,180 +184,183 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        /** Top 20 - Traffic & Performance **/
-        // Main Chart
-        var shipments = [
-            [0, 204], [1, 192], [2, 188], [3, 172],
-            [4, 168], [5, 154], [6, 140], [7, 132],
-            [8, 121], [9, 110], [10, 109], [11, 93],
-            [12, 82], [13, 73], [14, 64], [15, 55],
-            [16, 47], [17, 36], [18, 29], [19, 18],
-            [20, 10]
-        ];
 
-        var leadTime = [
-            [0, 120], [1, 150], [2, 130], [3, 140],
-            [4, 140], [5, 160], [6, 250], [7, 240],
-            [8, 270], [9, 280], [10, 290], [11, 260],
-            [12, 340], [13, 350], [14, 311], [15, 380],
-            [16, 380], [17, 411], [18, 411], [19, 460],
-            [20, 460]
-        ];
+<%block name="js">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /** Top 20 - Traffic & Performance **/
+            // Main Chart
+            var shipments = [
+                [0, 204], [1, 192], [2, 188], [3, 172],
+                [4, 168], [5, 154], [6, 140], [7, 132],
+                [8, 121], [9, 110], [10, 109], [11, 93],
+                [12, 82], [13, 73], [14, 64], [15, 55],
+                [16, 47], [17, 36], [18, 29], [19, 18],
+                [20, 10]
+            ];
 
-        var dataset = [
-            {
-                label: "Number of shipments",
-                data: shipments,
-                color: "#1ab394",
-                bars: {
-                    show: true,
-                    align: "center",
-                    barWidth: 0.6,
-                    lineWidth: 0
-                }
-            }, {
-                label: "Average lead time",
-                data: leadTime,
-                yaxis: 2,
-                color: "#1C84C6",
-                lines: {
-                    lineWidth: 1,
-                    show: true,
-                    fill: true,
-                    fillColor: {
-                        colors: [{
-                            opacity: 0.2
-                        }, {
-                            opacity: 0.2
-                        }]
+            var leadTime = [
+                [0, 120], [1, 150], [2, 130], [3, 140],
+                [4, 140], [5, 160], [6, 250], [7, 240],
+                [8, 270], [9, 280], [10, 290], [11, 260],
+                [12, 340], [13, 350], [14, 311], [15, 380],
+                [16, 380], [17, 411], [18, 411], [19, 460],
+                [20, 460]
+            ];
+
+            var dataset = [
+                {
+                    label: "Number of shipments",
+                    data: shipments,
+                    color: "#1ab394",
+                    bars: {
+                        show: true,
+                        align: "center",
+                        barWidth: 0.6,
+                        lineWidth: 0
                     }
+                }, {
+                    label: "Average lead time",
+                    data: leadTime,
+                    yaxis: 2,
+                    color: "#1C84C6",
+                    lines: {
+                        lineWidth: 1,
+                        show: true,
+                        fill: true,
+                        fillColor: {
+                            colors: [{
+                                opacity: 0.2
+                            }, {
+                                opacity: 0.2
+                            }]
+                        }
+                    },
+                    splines: {
+                        show: false,
+                        tension: 0.6,
+                        lineWidth: 1,
+                        fill: 0.1
+                    }
+                }
+            ];
+
+            var options = {
+                xaxis: {
+                    tickSize: 1,
+                    tickLength: 0,
+                    tickDecimals: 0,
+                    axisLabel: "Date",
+                    axisLabelUseCanvas: true,
+                    axisLabelFontSizePixels: 12,
+                    axisLabelFontFamily: 'Arial',
+                    axisLabelPadding: 10,
+                    color: "#d5d5d5"
                 },
-                splines: {
-                    show: false,
-                    tension: 0.6,
-                    lineWidth: 1,
-                    fill: 0.1
+                yaxes: [{
+                    position: "left",
+                    color: "#d5d5d5",
+                    axisLabelUseCanvas: true,
+                    axisLabelFontSizePixels: 12,
+                    axisLabelFontFamily: 'Arial',
+                    axisLabelPadding: 3
+                }, {
+                    position: "right",
+                    clolor: "#d5d5d5",
+                    axisLabelUseCanvas: true,
+                    axisLabelFontSizePixels: 12,
+                    axisLabelFontFamily: ' Arial',
+                    axisLabelPadding: 67
                 }
-            }
-        ];
-
-        var options = {
-            xaxis: {
-                tickSize: 1,
-                tickLength: 0,
-                tickDecimals: 0,
-                axisLabel: "Date",
-                axisLabelUseCanvas: true,
-                axisLabelFontSizePixels: 12,
-                axisLabelFontFamily: 'Arial',
-                axisLabelPadding: 10,
-                color: "#d5d5d5"
-            },
-            yaxes: [{
-                position: "left",
-                color: "#d5d5d5",
-                axisLabelUseCanvas: true,
-                axisLabelFontSizePixels: 12,
-                axisLabelFontFamily: 'Arial',
-                axisLabelPadding: 3
-            }, {
-                position: "right",
-                clolor: "#d5d5d5",
-                axisLabelUseCanvas: true,
-                axisLabelFontSizePixels: 12,
-                axisLabelFontFamily: ' Arial',
-                axisLabelPadding: 67
-            }
-            ],
-            legend: {
-                noColumns: 2,
-                labelBoxBorderColor: "#000000",
-                labelFormatter: function (label, series) {
-                    return '<div style="margin-right:20px;">' + label + '</div>';
+                ],
+                legend: {
+                    noColumns: 2,
+                    labelBoxBorderColor: "#000000",
+                    labelFormatter: function (label, series) {
+                        return '<div style="margin-right:20px;">' + label + '</div>';
+                    },
+                    container: '#dash-traffic-legend'
                 },
-                container: '#dash-traffic-legend'
-            },
-            grid: {
-                hoverable: true,
-                borderWidth: 0
-            },
-            tooltip: true,
-            tooltipOpts: {
-                content: function (label, x, y) {
-                    return label + ': ' + y;
+                grid: {
+                    hoverable: true,
+                    borderWidth: 0
+                },
+                tooltip: true,
+                tooltipOpts: {
+                    content: function (label, x, y) {
+                        return label + ': ' + y;
+                    }
                 }
-            }
-        };
+            };
 
-        $.plot($("#dash-traffic-chart"), dataset, options);
+            $.plot($("#dash-traffic-chart"), dataset, options);
 
 
-        /** Delivery Schedule **/
-        // Main Chart
-        var schedule = [
-            [hourStamp(0), 72], [hourStamp(1), 5], [hourStamp(2), 3], [hourStamp(3), 0],
-            [hourStamp(4), 0], [hourStamp(5), 2], [hourStamp(6), 29], [hourStamp(7), 117],
-            [hourStamp(8), 85], [hourStamp(9), 92], [hourStamp(10), 96], [hourStamp(11), 121],
-            [hourStamp(12), 130], [hourStamp(13), 172], [hourStamp(14), 165], [hourStamp(15), 157],
-            [hourStamp(16), 183], [hourStamp(17), 170], [hourStamp(18), 175], [hourStamp(19), 204],
-            [hourStamp(20), 206], [hourStamp(21), 180], [hourStamp(22), 60], [hourStamp(23), 12]
-        ];
+            /** Delivery Schedule **/
+            // Main Chart
+            var schedule = [
+                [hourStamp(0), 72], [hourStamp(1), 5], [hourStamp(2), 3], [hourStamp(3), 0],
+                [hourStamp(4), 0], [hourStamp(5), 2], [hourStamp(6), 29], [hourStamp(7), 117],
+                [hourStamp(8), 85], [hourStamp(9), 92], [hourStamp(10), 96], [hourStamp(11), 121],
+                [hourStamp(12), 130], [hourStamp(13), 172], [hourStamp(14), 165], [hourStamp(15), 157],
+                [hourStamp(16), 183], [hourStamp(17), 170], [hourStamp(18), 175], [hourStamp(19), 204],
+                [hourStamp(20), 206], [hourStamp(21), 180], [hourStamp(22), 60], [hourStamp(23), 12]
+            ];
 
-        var scheduleDataset = [
-            {
-                label: "Deliveries",
-                data: schedule,
-                color: "#1ab394",
-                bars: {
-                    show: true,
-                    align: "center",
-                    barWidth: 60 * 60 * 600,
-                    lineWidth: 0
+            var scheduleDataset = [
+                {
+                    label: "Deliveries",
+                    data: schedule,
+                    color: "#1ab394",
+                    bars: {
+                        show: true,
+                        align: "center",
+                        barWidth: 60 * 60 * 600,
+                        lineWidth: 0
+                    }
                 }
+            ];
+
+            var scheduleOptions = {
+                xaxis: {
+                    mode: "time",
+                    timeformat: "%H",
+                    tickSize: [1, "hour"],
+                    tickLength: 0,
+                    axisLabel: "Time",
+                    axisLabelUseCanvas: true,
+                    axisLabelFontSizePixels: 12,
+                    axisLabelFontFamily: 'Arial',
+                    axisLabelPadding: 10,
+                    color: "#d5d5d5"
+                },
+                yaxis: {
+                    position: "left",
+                    color: "#d5d5d5",
+                    axisLabelUseCanvas: true,
+                    axisLabelFontSizePixels: 12,
+                    axisLabelFontFamily: 'Arial',
+                    axisLabelPadding: 3
+                },
+                grid: {
+                    hoverable: true,
+                    borderWidth: 0
+                },
+                legend: {
+                    position: 'nw',
+                    labelBoxBorderColor: "#000000"
+                }
+            };
+
+            $.plot($("#dash-schedule-chart"), scheduleDataset, scheduleOptions);
+
+            function hourStamp(hour) {
+                var today = new Date();
+                today.setUTCHours(hour);
+                today.setUTCMinutes(0);
+                today.setUTCMilliseconds(0);
+                return today;
             }
-        ];
-
-        var scheduleOptions = {
-            xaxis: {
-                mode: "time",
-                timeformat: "%H",
-                tickSize: [1, "hour"],
-                tickLength: 0,
-                axisLabel: "Time",
-                axisLabelUseCanvas: true,
-                axisLabelFontSizePixels: 12,
-                axisLabelFontFamily: 'Arial',
-                axisLabelPadding: 10,
-                color: "#d5d5d5"
-            },
-            yaxis: {
-                position: "left",
-                color: "#d5d5d5",
-                axisLabelUseCanvas: true,
-                axisLabelFontSizePixels: 12,
-                axisLabelFontFamily: 'Arial',
-                axisLabelPadding: 3
-            },
-            grid: {
-                hoverable: true,
-                borderWidth: 0
-            },
-            legend: {
-                position: 'nw',
-                labelBoxBorderColor: "#000000"
-            }
-        };
-
-        $.plot($("#dash-schedule-chart"), scheduleDataset, scheduleOptions);
-
-        function hourStamp(hour) {
-            var today = new Date();
-            today.setUTCHours(hour);
-            today.setUTCMinutes(0);
-            today.setUTCMilliseconds(0);
-            return today;
-        }
-    })
-</script>
+        })
+    </script>
+</%block>

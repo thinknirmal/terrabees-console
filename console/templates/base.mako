@@ -38,30 +38,30 @@
                                 Tb
                             </div>
                         </li>
-                        <li>
-                            <a id="link_dashboard" href="javascript:shared_utitilies.load_page('/dashboard')"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+                        <li class="nav_main_item">
+                            <a class="nav_link" href="/"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-paper-plane-o"></i> <span class="nav-label">Consignors</span> <span class="fa arrow"></span></a>
+                        <li class="nav_main_item">
+                            <a class="nav_link" href="#"><i class="fa fa-paper-plane-o"></i> <span class="nav-label">Consignors</span> <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
-                                <li><a href="javascript:shared_utitilies.load_page('/consignors')">All consignors</a></li>
-                                <li><a href="javascript:shared_utitilies.load_page('/create-consignor')">Create consignor</a></li>
-                                <li><a href="javascript:shared_utitilies.load_page('/create-consignor2')">Create consignor 2</a></li>
+                                <li><a class="nav_link" href="/consignors">All consignors</a></li>
+                                <li><a class="nav_link" href="/create-consignor">Create consignor</a></li>
+                                <li><a class="nav_link" href="/create-consignor2">Create consignor 2</a></li>
                                 <!--<li><a href="/consignors">All consignors</a></li>
-                                <li><a href="javascript:shared_utitilies.load_page('/create-consignor')">Create consignor</a></li>-->
+                                <li><a class="nav_link" href="/create-consignor">Create consignor</a></li>-->
                             </ul>
                         </li>
-                        <li>
+                        <li class="nav_main_item">
                             <a href="#"><i class="fa fa-truck"></i> <span class="nav-label">Pickups</span> <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
-                                <li><a href="javascript:shared_utitilies.load_page('/pickups')">All pickups</a></li>
-                                <li><a href="javascript:shared_utitilies.load_page('/create-pickup')">Create pickup</a></li>
+                                <li><a class="nav_link" href="/pickups">All pickups</a></li>
+                                <li><a class="nav_link" href="/create-pickup">Create pickup</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-cogs"></i> <span class="nav-label">Settings</span> <span class="fa arrow"></span></a>
+                        <li class="nav_main_item">
+                            <a class="nav_link" href="#"><i class="fa fa-cogs"></i> <span class="nav-label">Settings</span> <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
-                                <li><a href="javascript:shared_utitilies.load_page('/pickup-points')">Pickup points</a></li>
+                                <li><a class="nav_link" href="/pickup-points">Pickup points</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -94,7 +94,7 @@
                 <div class="row border-bottom">
                     <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
                         <div class="navbar-header">
-                            <a id="navbar-minimalize" class="minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i></a>
                         </div>
                         <ul class="nav navbar-top-links navbar-right">
                             <li class="dropdown">
@@ -106,7 +106,7 @@
                                     <li><a href="#"><small>Billing</small></a></li>
                                     <li><a href="#"><small>Security Credentials</small></a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#"><small>Logout</small></a></li>
+                                    <li><a id="logout" href="#"><small>Logout</small></a></li>
                                 </ul>
                             </li>
                             <li class="dropdown m-l-md">
@@ -167,6 +167,10 @@
         <!-- Cookie -->
         <script type="text/javascript" src="${request.static_url('console:static/js/js.cookie.js')}"></script>
         <script type="text/javascript" src="${request.static_url('console:static/js/myCookie.js')}"></script>
+
+        <!-- Google Map -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFnF8ufunhRJ1T-P1LGLHaK4RRUYl4C6s&libraries=places"></script>
+        <script type="text/javascript" src="${request.static_url('console:static/js/plugins/locationpicker/locationpicker.jquery.js')}"></script>
 
         <script src="${request.static_url('console:static/js/base.js')}"></script>
         <%block name="js"></%block>
